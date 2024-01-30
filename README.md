@@ -18,6 +18,7 @@ Na mitologia grega Pandora foi uma mulher criada pelos deuses para ter diversas 
 <p align="center">
 <img loading="lazy" src="http://img.shields.io/static/v1?label=STATUS&message=EM%20DESENVOLVIMENTO&color=7159c1&style=for-the-badge"/>
 </p>
+<hr>
 
 # :hammer: Funcionalidades do projeto
 :heavy_check_mark: ✔️`Funcionalidade 1`: Realizar cadastro dos clientes, podendo ser paciente ou profissional. Realizar cadastro de serviços e profissionais.
