@@ -13,18 +13,8 @@ class AdmController extends Controller
     {
         $ADM = ADM::create([
             'nome' => $request->nome,
-            'celular' => $request->celular,
             'email' => $request->email,
             'cpf' => $request->cpf,
-            'dataNascimento' => $request->dataNascimento,
-            'cidade' => $request->cidade,
-            'estado' => $request->estado,
-            'pais' => $request->pais,
-            'rua' => $request->rua,
-            'numero' => $request->numero,
-            'bairro' => $request->bairro,
-            'cep' => $request->cep,
-            'complemento' => $request->complemento,
             'senha' => Hash::make($request->senha)
         ]);
 

@@ -58,6 +58,7 @@ public function messages(){
 
         'email.required'=>'E-mail obrigátorio',
         'email.max'=>'E-mail deve conter no máximo 120 caracteres',
+        'email.unique'=> 'O campo e-mail deve ser único',
 
         'cpf'=>'O campo CPF é obrigatório',
         'cpf.max'=>'O campo cpf deve conter no máximo 11 caracteres',
