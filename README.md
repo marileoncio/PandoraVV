@@ -21,9 +21,9 @@ Na mitologia grega Pandora foi uma mulher criada pelos deuses para ter diversas 
 <hr>
 
 # :hammer: Funcionalidades do projeto
-:heavy_check_mark: ✔️`Funcionalidade 1`: Realizar cadastro dos clientes, podendo ser paciente ou profissional. Realizar cadastro de serviços e profissionais.
-:heavy_check_mark: ✔️`Funcionalidade 2`: Armazenar dados dos clientes e agendamentos dos mesmos.
-:heavy_check_mark: ✔️`Funcionalidade 3`: Funções de recuperar senha de clientes e profissionais.
+* ✔️`Funcionalidade 1`: Realizar cadastro dos clientes, podendo ser paciente ou profissional. Realizar cadastro de serviços e profissionais.
+* ✔️`Funcionalidade 2`: Armazenar dados dos clientes e agendamentos dos mesmos. 
+* ✔️`Funcionalidade 3`: Funções de recuperar senha de clientes e profissionais.
 
  # 📁 Acesso ao projeto
  - git clone https://github.com/marileoncio/PandoraVV.git
