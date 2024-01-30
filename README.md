@@ -8,22 +8,21 @@
 * [Status do Projeto](#status-do-Projeto)
 * [Funcionalidades e Demonstração da Aplicação](#funcionalidades-e-demonstração-da-aplicação)
 * [Acesso ao Projeto](#acesso-ao-projeto)
-* [Tecnologias utilizadas](#tecnologias-utilizadas)
-* [Pessoas Contribuidoras](#pessoas-contribuidoras)
 * [Pessoas Desenvolvedoras do Projeto](#pessoas-desenvolvedoras)
-* [Conclusão](#conclusão)
+
 
 <h2 align="center">Descrição do Projeto</h2>
 Na mitologia grega Pandora foi uma mulher criada pelos deuses para ter diversas qualidades como graça, beleza, inteligência, paciência e meiguice, nós como salão temos a finalidade de deixar nossos clientes belos como Pandora. Já os complementos Vogue e Velvet é por conta de sua elegância. Esse projeto tem como objetivo facilitar o desenvolvimento e realizar um site de um salão de beleza unisex fictícia feito por estudantes da escola SESI, para aprofundar nossos conhecimentos nas linguagens PHP e Json.
 <br>
+
 <p align="center">
 <img loading="lazy" src="http://img.shields.io/static/v1?label=STATUS&message=EM%20DESENVOLVIMENTO&color=7159c1&style=for-the-badge"/>
 </p>
 
 # :hammer: Funcionalidades do projeto
-✔️`Funcionalidade 1`: Realizar cadastro dos clientes, podendo ser paciente ou profissional. Realizar cadastro de serviços e profissionais.
-✔️`Funcionalidade 2`: Armazenar dados dos clientes e agendamentos dos mesmos.
-✔️`Funcionalidade 3`: Funções de recuperar senha de clientes e profissionais.
+:heavy_check_mark: ✔️`Funcionalidade 1`: Realizar cadastro dos clientes, podendo ser paciente ou profissional. Realizar cadastro de serviços e profissionais.
+:heavy_check_mark: ✔️`Funcionalidade 2`: Armazenar dados dos clientes e agendamentos dos mesmos.
+:heavy_check_mark: ✔️`Funcionalidade 3`: Funções de recuperar senha de clientes e profissionais.
 
  # 📁 Acesso ao projeto
  - git clone https://github.com/marileoncio/PandoraVV.git
@@ -37,3 +36,9 @@ Na mitologia grega Pandora foi uma mulher criada pelos deuses para ter diversas 
 - git config --global user.name "marileoncio"
 - git config --global user.email "mariana.timoteo19@yahoo.com"
 - php artisan serve
+
+# Desenvedores do projeto 
+* [Emilly Gabrielle](https://github.com/EmyyS2)
+* [Giovanna Florencio](https://github.com/nanaflorencci)
+* [Mariana Leoncio](https://github.com/marileoncio)
+* [Matheus Bispo](https://github.com/Matheus438)
