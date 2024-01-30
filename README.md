@@ -4,7 +4,7 @@
 </p>
 
 # Índice 
- [Descrição do Projeto](#descrição-do-projeto)
+* [Descrição do Projeto](#descrição-do-projeto)
 * [Status do Projeto](#status-do-Projeto)
 * [Funcionalidades e Demonstração da Aplicação](#funcionalidades-e-demonstração-da-aplicação)
 * [Acesso ao Projeto](#acesso-ao-projeto)
@@ -15,7 +15,7 @@
 
 <h2 align="center">Descrição do Projeto</h2>
 Na mitologia grega Pandora foi uma mulher criada pelos deuses para ter diversas qualidades como graça, beleza, inteligência, paciência e meiguice, nós como salão temos a finalidade de deixar nossos clientes belos como Pandora. Já os complementos Vogue e Velvet é por conta de sua elegância. Esse projeto tem como objetivo facilitar o desenvolvimento e realizar um site de um salão de beleza unisex fictícia feito por estudantes da escola SESI, para aprofundar nossos conhecimentos nas linguagens PHP e Json.
-
+<br>
 <p align="center">
 <img loading="lazy" src="http://img.shields.io/static/v1?label=STATUS&message=EM%20DESENVOLVIMENTO&color=7159c1&style=for-the-badge"/>
 </p>
