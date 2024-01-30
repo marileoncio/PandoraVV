@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\ClienteFormrequest;
-use App\Models\ClienteModel;
+use App\Models\Clientes;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 
@@ -11,7 +11,7 @@ class ClienteController extends Controller
 {
     public function store(ClienteFormrequest $request)
     {
-        $cliente = ClienteModel::create([
+        $cliente = Clientes::create([
             'nome' => $request->nome,
             'celular' => $request->celular,
             'email' => $request->email,
@@ -25,7 +25,7 @@ class ClienteController extends Controller
             'bairro' => $request->bairro,
             'cep' => $request->cep,
             'complemento' => $request->complemento,
-            'senha' => Hash::make($request->senha)
+            'password' => Hash::make($request->password)
         ]);
 
         return response()->json([
@@ -35,9 +35,9 @@ class ClienteController extends Controller
 
         ], 200);
     }
-    public function redefinirSenha(Request $request)
+    public function redefinirpassword(Request $request)
     {
-        $Cliente = ClienteModel::where('email', $request->email)->first();
+        $Cliente = Clientes::where('email', $request->email)->first();
         
         if (!isset($Cliente)) {
             return response()->json([
@@ -51,13 +51,13 @@ class ClienteController extends Controller
 
         return response()->json([
             'status' => false,
-            'message' => "Sua senha foi atualizada"
+            'message' => "Sua password foi atualizada"
         ]);
     }
 
     public function pesquisarPorNome(Request $request)
     {
-        $cliente = ClienteModel::where('nome', 'like', '%' . $request->nome . '%')->get();
+        $cliente = Clientes::where('nome', 'like', '%' . $request->nome . '%')->get();
         if (count($cliente) > 0) {
             return response()->json([
                 'status' => true,
@@ -73,7 +73,7 @@ class ClienteController extends Controller
 
     public function pesquisarEmail(Request $request)
     {
-        $cliente = ClienteModel::where('email', 'like', '%' . $request->email . '%')->get();
+        $cliente = Clientes::where('email', 'like', '%' . $request->email . '%')->get();
         if (count($cliente) > 0) {
             return response()->json([
                 'status' => true,
@@ -89,7 +89,7 @@ class ClienteController extends Controller
 
     public function retornarTodos()
     {
-        $cliente = ClienteModel::all();
+        $cliente = Clientes::all();
         return response()->json([
             'status' => true,
             'data' => $cliente
@@ -98,7 +98,7 @@ class ClienteController extends Controller
 
     public function pesquisarPorId($id)
     {
-        $cliente = ClienteModel::find($id);
+        $cliente = Clientes::find($id);
         if ($cliente == null) {
             return response()->json([
                 'status' => false,
@@ -115,7 +115,7 @@ class ClienteController extends Controller
 
     public function update(Request $request)
     {
-        $cliente = ClienteModel::find($request->id);
+        $cliente = Clientes::find($request->id);
 
         if (!isset($cliente)) {
             return response()->json([
@@ -164,8 +164,8 @@ class ClienteController extends Controller
     if (isset($request->complemento)) {
         $cliente->complemento = $request->complemento;
     }
-    if (isset($request->senha)) {
-        $cliente->senha = $request->senha;
+    if (isset($request->password)) {
+        $cliente->password = $request->password;
     }
     
     $cliente->update();
@@ -177,7 +177,7 @@ class ClienteController extends Controller
 
 public function excluir($id)
     {
-        $cliente = ClienteModel::find($id);
+        $cliente = Clientes::find($id);
 
         if (!isset($cliente)) {
             return response()->json([
