@@ -5,13 +5,12 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class ADM extends Model
+class Pagamento extends Model
 {
     use HasFactory;
-    protected $fillable=[
+    protected $fillable = [
         'nome',
-        'email',
-        'cpf',
-        'password'
-];
+        'taxa',
+        'status'
+    ];
 }

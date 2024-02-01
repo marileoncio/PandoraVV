@@ -7,7 +7,7 @@ use App\Models\Profissional;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 
-class ProfissionalController extends Controller
+class ProfissioanalController extends Controller
 {
     public function store(ProfissionalFormRequest $request)
     {
@@ -161,12 +161,20 @@ public function pesquisarPorNome(Request $request)
     public function excluir($id)
     {
         $Profissional = Profissional::find($id);
+
         if (!isset($Profissional)) {
             return response()->json([
-                "status" => false,
-                "message" => "Profissional não encontrado"
+                'status' => false,
+                'message' => "Profissional não encontrado"
+
             ]);
         }
-        
+
+        $Profissional->delete();
+        return response()->json([
+            'status' => true,
+            'message' => "Profissional excluído com sucesso"
+        ]);
+    }
 }
-}
+

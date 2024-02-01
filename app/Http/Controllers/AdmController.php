@@ -41,7 +41,7 @@ class AdmController extends Controller
         $ADM->update();    
 
         return response()->json([
-            'status' => false,
+            'status' => true,
             'message' => "Sua password foi atualizada"
         ]);
     }

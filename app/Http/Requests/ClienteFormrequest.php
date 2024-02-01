@@ -37,7 +37,7 @@ class ClienteFormrequest extends FormRequest
             'bairro'=>'required|max:100',
             'cep'=>'required|max:8|min:8',
             'complemento'=>'|max:150',
-            'senha'=>'required',
+            'password'=>'required',
         ];
     }
     public function failedValidation(Validator $validator){
@@ -93,7 +93,7 @@ public function messages(){
 
         'complemento.max'=>'Complemento deve conter no máximo 150 caracteres',
         
-        'senha.required'=>'Senha é obrigátorio'
+        'password.required'=>'password é obrigátorio'
 ];
  
 }   
