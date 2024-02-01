@@ -28,7 +28,7 @@ class ClienteUpdateFormrequest extends FormRequest
             'celular' => 'required|max:11|min:10|unique:clientes,celular',
             'email' => 'required|email|unique:clientes,email',
             'cpf' => 'required|max:11|min:11|unique:clientes,cpf',
-            'dataNascimento' => 'required|date', 
+            'dataNascimento' => 'required|date',
             'cidade' => 'required|max:120|min:2',
             'estado' => 'required|max:2|min:2',
             'pais' => 'required|max:80|min:3',
@@ -48,9 +48,10 @@ class ClienteUpdateFormrequest extends FormRequest
             'error' => $validator->errors()
         ]));
     }
-    public function messages(){
+    public function messages()
+    {
 
-        return[
+        return [
             'nome.required' => 'o nome é obrigatorio',
             'nome.max' => 'o campo nome deve contar no maximo 120 caracteres',
             'nome.min' => 'o campo nome deve contar no minimo 5 caracteres',
@@ -94,4 +95,3 @@ class ClienteUpdateFormrequest extends FormRequest
         ];
     }
 }
-      

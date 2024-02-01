@@ -39,7 +39,7 @@ Na mitologia grega Pandora foi uma mulher criada pelos deuses para ter diversas 
  ```
 - code .
  ```
-  ```
+ ```
 - composer update
  ```
 ```

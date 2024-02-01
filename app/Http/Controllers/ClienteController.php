@@ -38,7 +38,7 @@ class ClienteController extends Controller
     public function redefinirpassword(Request $request)
     {
         $Cliente = Clientes::where('email', $request->email)->first();
-        
+
         if (!isset($Cliente)) {
             return response()->json([
                 'status' => false,
@@ -47,7 +47,7 @@ class ClienteController extends Controller
         }
 
         $Cliente->password = Hash::make($Cliente->cpf);
-        $Cliente->update();    
+        $Cliente->update();
 
         return response()->json([
             'status' => false,
@@ -123,59 +123,59 @@ class ClienteController extends Controller
                 'message' => 'Cliente não atualizado'
             ]);
         }
-    
 
-    if (isset($request->nome)) {
-        $cliente->nome = $request->nome;
-    }
-    if (isset($request->celular)) {
-        $cliente->celular = $request->celular;
-    }
-    if (isset($request->email)) {
-        $cliente->email = $request->email;
-    }
-    if (isset($request->cpf)) {
-        $cliente->cpf = $request->cpf;
-    }
-    if (isset($request->dataNascimento)) {
-        $cliente->dataNascimento = $request->dataNascimento;
-    }
-    if (isset($request->cidade)) {
-        $cliente->cidade = $request->cidade;
-    }
-    if (isset($request->estado)) {
-        $cliente->estado = $request->estado;
-    }
-    if (isset($request->pais)) {
-        $cliente->pais = $request->pais;
-    }
-    if (isset($request->rua)) {
-        $cliente->rua = $request->rua;
-    }
-    if (isset($request->numero)) {
-        $cliente->numero = $request->numero;
-    }
-    if (isset($request->bairro)) {
-        $cliente->bairro = $request->bairro;
-    }
-    if (isset($request->cep)) {
-        $cliente->cep = $request->cep;
-    }
-    if (isset($request->complemento)) {
-        $cliente->complemento = $request->complemento;
-    }
-    if (isset($request->password)) {
-        $cliente->password = $request->password;
-    }
-    
-    $cliente->update();
-    return response()->json([
-        'status' => true,
-        'message' => 'Cliente atualizado.'
-    ]);
-}
 
-public function excluir($id)
+        if (isset($request->nome)) {
+            $cliente->nome = $request->nome;
+        }
+        if (isset($request->celular)) {
+            $cliente->celular = $request->celular;
+        }
+        if (isset($request->email)) {
+            $cliente->email = $request->email;
+        }
+        if (isset($request->cpf)) {
+            $cliente->cpf = $request->cpf;
+        }
+        if (isset($request->dataNascimento)) {
+            $cliente->dataNascimento = $request->dataNascimento;
+        }
+        if (isset($request->cidade)) {
+            $cliente->cidade = $request->cidade;
+        }
+        if (isset($request->estado)) {
+            $cliente->estado = $request->estado;
+        }
+        if (isset($request->pais)) {
+            $cliente->pais = $request->pais;
+        }
+        if (isset($request->rua)) {
+            $cliente->rua = $request->rua;
+        }
+        if (isset($request->numero)) {
+            $cliente->numero = $request->numero;
+        }
+        if (isset($request->bairro)) {
+            $cliente->bairro = $request->bairro;
+        }
+        if (isset($request->cep)) {
+            $cliente->cep = $request->cep;
+        }
+        if (isset($request->complemento)) {
+            $cliente->complemento = $request->complemento;
+        }
+        if (isset($request->password)) {
+            $cliente->password = $request->password;
+        }
+
+        $cliente->update();
+        return response()->json([
+            'status' => true,
+            'message' => 'Cliente atualizado.'
+        ]);
+    }
+
+    public function excluir($id)
     {
         $cliente = Clientes::find($id);
 
@@ -193,10 +193,4 @@ public function excluir($id)
             'message' => "Cliente excluído com sucesso"
         ]);
     }
-
 }
-
-
-
-
-

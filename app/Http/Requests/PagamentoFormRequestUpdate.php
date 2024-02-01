@@ -25,19 +25,19 @@ class PagamentoFormRequestUpdate extends FormRequest
     {
         return [
             'nome' => 'required|max:120|min:2',
-            'taxa'=>'required|max:120|min:3',
+            'taxa' => 'required|max:120|min:3',
             'status' => 'required|max:120|min:3',
         ];
     }
-    
+
     public function failedValidation(Validator $validator)
     {
-    throw new HttpResponseException(response()->json([
+        throw new HttpResponseException(response()->json([
             'success' => false,
             'error' => $validator->errors()
         ]));
     }
-    
+
     public function messages()
     {
         return [
@@ -48,7 +48,7 @@ class PagamentoFormRequestUpdate extends FormRequest
 
             'taxa.required' => 'O campo taxa é obrigatório',
             'taxa.max' => 'O campo taxa deve conter 120 caracteres',
-            
+
             'status.required' => 'O campo status é obrigatorio.',
             'status.max' => 'O campo status deve conter, no máximo, 120 caracteres',
             'status.max' => 'O campo status deve conter, no mínimo, 3 caracteres',

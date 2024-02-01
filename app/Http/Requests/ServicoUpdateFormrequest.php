@@ -24,7 +24,7 @@ class ServicoUpdateFormrequest extends FormRequest
     public function rules(): array
     {
         return [
-            'nome' => 'required|max:80|min:5|unique:servicos,nome,'. $this->id,
+            'nome' => 'required|max:80|min:5|unique:servicos,nome,' . $this->id,
             'descricao' => 'required|max:200|min:10',
             'duracao' => 'required|numeric',
             'preco' => 'required|decimal:2',
@@ -38,9 +38,10 @@ class ServicoUpdateFormrequest extends FormRequest
             'error' => $validator->errors()
         ]));
     }
-    public function messages(){
+    public function messages()
+    {
 
-        return[
+        return [
             'nome.required' => 'O campo nome é obrigatorio',
             'nome.max' => 'O campo nome deve ter no maximo 80 caracteres',
             'nome.min' => 'O campo nome deve ter no minimo 5 caracteres',
@@ -55,4 +56,3 @@ class ServicoUpdateFormrequest extends FormRequest
         ];
     }
 }
-        

@@ -59,7 +59,7 @@ class PagamentoController extends Controller
             'message' =>  "Pagamento excluído com êxito"
         ]));
     }
-    
+
     public function updatepagamento(PagamentoFormRequestUpdate $request)
     {
         $pagamento = Pagamento::find($request->id);
@@ -95,30 +95,29 @@ class PagamentoController extends Controller
         ]);
     }
 
-    public function visualizarCadastroTipoPagamento() 
-    { 
-        $pagamento = Pagamento::all(); 
+    public function visualizarCadastroTipoPagamento()
+    {
+        $pagamento = Pagamento::all();
 
-        if (!isset($pagamento)) { 
+        if (!isset($pagamento)) {
 
-            return response()->json([ 
+            return response()->json([
 
-                'status' => false, 
+                'status' => false,
 
-                'message' => 'Não há registros no sistema' 
+                'message' => 'Não há registros no sistema'
 
-            ]); 
+            ]);
+        }
 
-        } 
+        return response()->json([
 
-        return response()->json([ 
+            'status' => true,
 
-            'status' => true, 
+            'data' => $pagamento
 
-            'data' => $pagamento 
-
-        ]); 
-    } 
+        ]);
+    }
 
     public function visualizarCadastroPagamentoHabilitado()
     {

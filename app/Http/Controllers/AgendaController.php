@@ -36,7 +36,7 @@ class AgendaController extends Controller
                 "status" => false,
                 "message" => "Horario já cadastrado",
                 "data" => $agenda
-            ], 200);    
+            ], 200);
         } else {
 
             $agenda = Agenda::create([
@@ -50,17 +50,18 @@ class AgendaController extends Controller
             ], 200);
         }
     }
-    public function pesquisarPorDataDoProfissional(Request $request){
-        if ($request->profissional_id == 0 || $request->profissional_id ==''){
+    public function pesquisarPorDataDoProfissional(Request $request)
+    {
+        if ($request->profissional_id == 0 || $request->profissional_id == '') {
             $agenda = Agenda::all();
         } else {
             $agenda = Agenda::where('profissional_id', $request->profissional_id);
-            if(isset($request->data_Hora)) {
+            if (isset($request->data_Hora)) {
                 $agenda->whereDate('data_Hora', '=', $request->data_Hora);
             }
-            $agenda = $agenda-> get();
+            $agenda = $agenda->get();
         }
-        if(count($agenda) > 0) {
+        if (count($agenda) > 0) {
             return response()->json([
                 'status' => true,
                 'data' => $agenda
@@ -73,7 +74,7 @@ class AgendaController extends Controller
     }
     public function excluiAgenda($id)
     {
-        
+
         $agenda = Agenda::find($id);
         if (!isset($agenda)) {
             return response()->json([
@@ -98,24 +99,24 @@ class AgendaController extends Controller
                 'message' => "agenda não encontrado"
             ]);
         }
-       
-        if(isset($request->clienteid)){
-        $agenda-> clienteid = $request->clienteid;
+
+        if (isset($request->clienteid)) {
+            $agenda->clienteid = $request->clienteid;
         }
-        if(isset($request->profissionalid)){
-        $agenda-> profissionalid = $request->profissionalid;
+        if (isset($request->profissionalid)) {
+            $agenda->profissionalid = $request->profissionalid;
         }
-        if(isset($request->dataHora)){
-        $agenda-> dataHora = $request->dataHora;
+        if (isset($request->dataHora)) {
+            $agenda->dataHora = $request->dataHora;
         }
-        if(isset($request->servicoid)){
-        $agenda-> servicoid = $request->servicoid;
+        if (isset($request->servicoid)) {
+            $agenda->servicoid = $request->servicoid;
         }
-        if(isset($request->pagamento)){
-            $agenda-> pagamento = $request->pagamento;
+        if (isset($request->pagamento)) {
+            $agenda->pagamento = $request->pagamento;
         }
-        if(isset($request->valor)){
-            $agenda-> valor = $request->valor;
+        if (isset($request->valor)) {
+            $agenda->valor = $request->valor;
         }
 
         $agenda->update();
@@ -124,20 +125,20 @@ class AgendaController extends Controller
             'status' => true,
             'message' => " atualizado."
         ]);
-       
     }
-    public function retornarTudo(){
+    public function retornarTudo()
+    {
         $agenda = Agenda::all();
 
-        if(count($agenda)==0){
+        if (count($agenda) == 0) {
             return response()->json([
-                'status'=> false,
-                'message'=> " nao encontrado"
+                'status' => false,
+                'message' => " nao encontrado"
             ]);
         }
         return response()->json([
-            'status'=> true,
+            'status' => true,
             'data' => $agenda
         ]);
-       }
+    }
 }

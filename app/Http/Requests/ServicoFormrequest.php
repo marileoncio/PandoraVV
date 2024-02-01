@@ -23,34 +23,35 @@ class ServicoFormrequest extends FormRequest
      */
     public function rules(): array
     {
-   
-            return [
-                'nome'=> 'required|max:80|min:5|unique:servicos,nome',
-                'descricao'=>'required|max:200|min:10|',
-                'duracao'=>'required|numeric',
-                'preco'=>'required|decimal:2'
-            ];
-        }
-       public function failedValidation(Validator $validator){
-         throw new HttpResponseException(response()->json([
-            'success'=>false,
-            'error'=>$validator->errors()
-         ]));
-       }
-       public function messages(){
+
         return [
-            'nome.required'=>'O campo nome é obrigatório',
-            'nome.max'=>'O campo nome deve conter no máximo 80 caracteres',
-            'nome.max'=>'O campo nome deve conter no mínimo 5 caracteres',
-    
-            'descricao.required'=>'descricao obrigatório',
-            'descricao.max'=>'Descrição deve conter no máximo 200 caracteres',
-            'descricao.min'=>'Descrição deve conter no mínimo 10 caracteres',
-    
-            'duracao.required'=>'Duração obrigátorio',
-            
-            'preco.required'=>'Preço obrigátorio'
+            'nome' => 'required|max:80|min:5|unique:servicos,nome',
+            'descricao' => 'required|max:200|min:10|',
+            'duracao' => 'required|numeric',
+            'preco' => 'required|decimal:2'
         ];
-    
+    }
+    public function failedValidation(Validator $validator)
+    {
+        throw new HttpResponseException(response()->json([
+            'success' => false,
+            'error' => $validator->errors()
+        ]));
+    }
+    public function messages()
+    {
+        return [
+            'nome.required' => 'O campo nome é obrigatório',
+            'nome.max' => 'O campo nome deve conter no máximo 80 caracteres',
+            'nome.max' => 'O campo nome deve conter no mínimo 5 caracteres',
+
+            'descricao.required' => 'descricao obrigatório',
+            'descricao.max' => 'Descrição deve conter no máximo 200 caracteres',
+            'descricao.min' => 'Descrição deve conter no mínimo 10 caracteres',
+
+            'duracao.required' => 'Duração obrigátorio',
+
+            'preco.required' => 'Preço obrigátorio'
+        ];
     }
 }

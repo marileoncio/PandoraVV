@@ -35,14 +35,14 @@ class ServicoController extends Controller
                 'data' => $servico
             ]);
         }
-        
+
 
         return response()->json([
             'status' => false,
             'message' => 'Não há resultados para pesquisa.'
         ]);
     }
-    
+
     public function pesquisarPoDescricao(Request $request)
     {
         $servico = Servico::where('descricao', 'like', '%' . $request->descricao . '%')->get();
@@ -60,25 +60,27 @@ class ServicoController extends Controller
             'message' => 'Não há resultados para pesquisa.'
         ]);
     }
-    public function retornarTodos(){
+    public function retornarTodos()
+    {
         $servico = Servico::all();
         return response()->json([
-            'status'=> true,
-            'data'=> $servico
+            'status' => true,
+            'data' => $servico
         ]);
     }
 
-    public function pesquisarPorId($id){
+    public function pesquisarPorId($id)
+    {
         $servico = servico::find($id);
-        if($servico == null){
+        if ($servico == null) {
             return response()->json([
-                'status'=> false,
+                'status' => false,
                 'message' => "Serviço não encontrado"
-            ]);     
+            ]);
         }
         return response()->json([
-            'status'=> true,
-            'data'=> $servico
+            'status' => true,
+            'data' => $servico
         ]);
     }
 
@@ -86,7 +88,7 @@ class ServicoController extends Controller
     {
 
         $servico = Servico::find($id);
-        
+
         if (!isset($servico)) {
             return response()->json([
                 'status' => false,
@@ -102,35 +104,35 @@ class ServicoController extends Controller
         ]);
     }
 
-    public function update(ServicoUpdateFormrequest $request){
+    public function update(ServicoUpdateFormrequest $request)
+    {
         $servico = Servico::find($request->id);
-    
-        if(!isset($servico)){
+
+        if (!isset($servico)) {
             return response()->json([
                 'status' => false,
                 'message' => "Serviço não encontrado"
             ]);
         }
-    
-        if(isset($request->nome)){
+
+        if (isset($request->nome)) {
             $servico->nome = $request->nome;
         }
-        if(isset($request->descricao)){
+        if (isset($request->descricao)) {
             $servico->descricao = $request->descricao;
         }
-        if(isset($request->duracao)){
+        if (isset($request->duracao)) {
             $servico->duracao = $request->duracao;
         }
-        if(isset($request->preco)){
+        if (isset($request->preco)) {
             $servico->preco = $request->preco;
         }
-    
+
         $servico->update();
-    
+
         return response()->json([
             'status' => false,
             'message' => "Serviço atualizado"
         ]);
-    
     }
-    }
+}

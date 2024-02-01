@@ -8,10 +8,10 @@ use Illuminate\Database\Eloquent\Model;
 class ADM extends Model
 {
     use HasFactory;
-    protected $fillable=[
+    protected $fillable = [
         'nome',
         'email',
         'cpf',
         'password'
-];
+    ];
 }

@@ -24,11 +24,11 @@ class ProfissionalFormRequestUpdate extends FormRequest
     public function rules(): array
     {
         return [
-            'nome' => 'required|max:120|min:5', 
-            'celular' => 'required|max:11|min:10|unique:profissionals,celular,'. $this->id,
-            'email' => 'required|email|unique:profissionals,email,'. $this->id,
-            'cpf' => 'required|max:11|min:11|unique:profissionals,cpf,'. $this->id,
-            'dataNascimento' => 'required|date', 
+            'nome' => 'required|max:120|min:5',
+            'celular' => 'required|max:11|min:10|unique:profissionals,celular,' . $this->id,
+            'email' => 'required|email|unique:profissionals,email,' . $this->id,
+            'cpf' => 'required|max:11|min:11|unique:profissionals,cpf,' . $this->id,
+            'dataNascimento' => 'required|date',
             'cidade' => 'required|max:120|min:2',
             'estado' => 'required|max:2|min:2',
             'pais' => 'required|max:80|min:3',
@@ -38,7 +38,7 @@ class ProfissionalFormRequestUpdate extends FormRequest
             'cep' => 'required|max:8|min:8',
             'complemento' => 'required|max:150|min:10',
             'password' => 'required',
-            'salario'=>'required|decimal:2',
+            'salario' => 'required|decimal:2',
         ];
     }
 
@@ -49,9 +49,10 @@ class ProfissionalFormRequestUpdate extends FormRequest
             'error' => $validator->errors()
         ]));
     }
-    public function messages(){
+    public function messages()
+    {
 
-        return[
+        return [
             'nome.required' => 'o nome é obrigatorio',
             'nome.max' => 'o campo nome deve contar no maximo 120 caracteres',
             'nome.min' => 'o campo nome deve contar no minimo 5 caracteres',
@@ -107,8 +108,8 @@ class ProfissionalFormRequestUpdate extends FormRequest
 
             'password.required' => 'Senha é obrigatório',
 
-            'salario.required'=>'o salário é obrigatório',
-            'salario.decimal'=>'O campo preço só é permitido números decimais'
+            'salario.required' => 'o salário é obrigatório',
+            'salario.decimal' => 'O campo preço só é permitido números decimais'
         ];
     }
 }

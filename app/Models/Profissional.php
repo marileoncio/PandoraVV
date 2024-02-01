@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Profissional extends Model
 {
     use HasFactory;
-    protected $fillable=[
+    protected $fillable = [
         'nome',
         'celular',
         'email',
@@ -25,6 +25,5 @@ class Profissional extends Model
         'password',
         'salario'
 
-];
-
+    ];
 }

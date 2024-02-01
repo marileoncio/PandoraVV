@@ -24,39 +24,35 @@ class ADMFormrequest extends FormRequest
     public function rules(): array
     {
         return [
-            'nome'=> 'required|min:5|max:120',
-            'email'=>'unique:clientes,email|required|email|max:120',
-            'cpf'=>'unique:clientes,cpf|required|max:11|min:11',
-            'password'=>'required',
+            'nome' => 'required|min:5|max:120',
+            'email' => 'unique:clientes,email|required|email|max:120',
+            'cpf' => 'unique:clientes,cpf|required|max:11|min:11',
+            'password' => 'required',
         ];
     }
-        public function failedValidation(Validator $validator){
-            throw new HttpResponseException(response()->json([
-               'success'=>false,
-               'error'=>$validator->errors()
-            ]));
+    public function failedValidation(Validator $validator)
+    {
+        throw new HttpResponseException(response()->json([
+            'success' => false,
+            'error' => $validator->errors()
+        ]));
     }
-    public function messages(){
+    public function messages()
+    {
         return [
-            'nome.required'=>'O campo nome é obrigatório',
-            'nome.min'=>'O campo nome deve conter no mínimo 5 caracteres',
-            'nome.max'=>'O campo nome deve conter no máximo 120 caracteres',
-    
-            'email.required'=>'E-mail obrigátorio',
-            'email.max'=>'E-mail deve conter no máximo 120 caracteres',
-    
-            'cpf'=>'O campo CPF é obrigatório',
-            'cpf.max'=>'O campo cpf deve conter no máximo 11 caracteres',
-            'cpf.min'=>'O campo cpf deve conter no mínimo 11 caracteres',
-            'cpf.unique'=>'O campo cpf deve ser único',
-            
-            'password.required'=>'password é obrigátorio'
-    ];
-     
-    }   
-    }
-    
-    
-    
-    
+            'nome.required' => 'O campo nome é obrigatório',
+            'nome.min' => 'O campo nome deve conter no mínimo 5 caracteres',
+            'nome.max' => 'O campo nome deve conter no máximo 120 caracteres',
 
+            'email.required' => 'E-mail obrigátorio',
+            'email.max' => 'E-mail deve conter no máximo 120 caracteres',
+
+            'cpf' => 'O campo CPF é obrigatório',
+            'cpf.max' => 'O campo cpf deve conter no máximo 11 caracteres',
+            'cpf.min' => 'O campo cpf deve conter no mínimo 11 caracteres',
+            'cpf.unique' => 'O campo cpf deve ser único',
+
+            'password.required' => 'password é obrigátorio'
+        ];
+    }
+}

@@ -29,7 +29,7 @@ class AdmController extends Controller
     public function redefinirpassword(Request $request)
     {
         $ADM = ADM::where('email', $request->email)->first();
-        
+
         if (!isset($ADM)) {
             return response()->json([
                 'status' => false,
@@ -38,7 +38,7 @@ class AdmController extends Controller
         }
 
         $ADM->password = Hash::make($ADM->cpf);
-        $ADM->update();    
+        $ADM->update();
 
         return response()->json([
             'status' => true,
@@ -48,14 +48,14 @@ class AdmController extends Controller
 
     public function excluir($id)
     {
-        $ADM  = ADM ::find($id);
-        if (!isset($ADM )) {
+        $ADM  = ADM::find($id);
+        if (!isset($ADM)) {
             return response()->json([
                 'status' => false,
                 'message' => "ADM não encontrado"
             ]);
         }
-        $ADM ->delete();
+        $ADM->delete();
 
         return response()->json([
             'status' => false,
@@ -84,7 +84,7 @@ class AdmController extends Controller
     {
         $ADM  = ADM::find($request->id);
 
-        if (!isset($ADM )) {
+        if (!isset($ADM)) {
             return response()->json([
                 'status' => false,
                 'message' => "ADM não encontrado"
@@ -92,34 +92,34 @@ class AdmController extends Controller
         }
 
         if (isset($request->nome)) {
-            $ADM ->nome = $request->nome;
+            $ADM->nome = $request->nome;
         }
         if (isset($request->celular)) {
-            $ADM ->celular = $request->celular;
+            $ADM->celular = $request->celular;
         }
         if (isset($request->email)) {
-            $ADM ->email = $request->email;
+            $ADM->email = $request->email;
         }
         if (isset($request->cpf)) {
-            $ADM ->cpf = $request->cpf;
+            $ADM->cpf = $request->cpf;
         }
         if (isset($request->dataNascimento)) {
-            $ADM ->dataNascimento = $request->dataNascimento;
+            $ADM->dataNascimento = $request->dataNascimento;
         }
         if (isset($request->cidade)) {
-            $ADM ->cidade = $request->cidade;
+            $ADM->cidade = $request->cidade;
         }
         if (isset($request->estado)) {
-            $ADM ->estado = $request->estado;
+            $ADM->estado = $request->estado;
         }
         if (isset($request->pais)) {
-            $ADM ->pais = $request->pais;
+            $ADM->pais = $request->pais;
         }
         if (isset($request->rua)) {
-            $ADM ->rua = $request->rua;
+            $ADM->rua = $request->rua;
         }
         if (isset($request->numero)) {
-            $ADM ->numero = $request->numero;
+            $ADM->numero = $request->numero;
         }
         if (isset($request->bairro)) {
             $ADM->bairro = $request->bairro;
@@ -142,4 +142,3 @@ class AdmController extends Controller
         ]);
     }
 }
-

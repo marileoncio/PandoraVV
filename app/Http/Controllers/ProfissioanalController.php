@@ -34,8 +34,8 @@ class ProfissioanalController extends Controller
             "data" => $Profissional
 
         ], 200);
-}
-public function pesquisarPorNome(Request $request)
+    }
+    public function pesquisarPorNome(Request $request)
     {
         $Profissional = Profissional::where('nome', 'like', '%' . $request->nome . '%')->get();
         if (count($Profissional) > 0) {
@@ -142,7 +142,7 @@ public function pesquisarPorNome(Request $request)
     public function redefinirpassword(Request $request)
     {
         $Profissional =  Profissional::where('email', $request->email)->first();
-        
+
         if (!isset($Profissional)) {
             return response()->json([
                 'status' => false,
@@ -151,7 +151,7 @@ public function pesquisarPorNome(Request $request)
         }
 
         $Profissional->password = Hash::make($Profissional->cpf);
-        $Profissional->update();    
+        $Profissional->update();
 
         return response()->json([
             'status' => false,
@@ -177,4 +177,3 @@ public function pesquisarPorNome(Request $request)
         ]);
     }
 }
-

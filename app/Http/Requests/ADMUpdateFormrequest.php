@@ -38,9 +38,10 @@ class ADMUpdateFormrequest extends FormRequest
             'error' => $validator->errors()
         ]));
     }
-    public function messages(){
+    public function messages()
+    {
 
-        return[
+        return [
             'nome.required' => 'o nome é obrigatorio',
             'nome.max' => 'o campo nome deve contar no maximo 120 caracteres',
             'nome.min' => 'o campo nome deve contar no minimo 5 caracteres',
@@ -54,8 +55,7 @@ class ADMUpdateFormrequest extends FormRequest
             'cpf.min' => 'o campo cpf deve contar no minimo 11 caracteres',
             'cpf.unique' => 'cpf ja cadastrado no sistema',
 
-           
+
         ];
     }
 }
-        
