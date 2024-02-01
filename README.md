@@ -33,14 +33,23 @@ Na mitologia grega Pandora foi uma mulher criada pelos deuses para ter diversas 
   ```
 
 # 🛠️ Abrir e rodar o projeto
+ ```
 - cd PandoraVV
+ ```
 - code .
+ ```
 - composer update
+ ```
 - copy .env.example .env
+ ```
 - php artisan migrate
+ ```
 - git config --global user.name "marileoncio"
+ ```
 - git config --global user.email "mariana.timoteo19@yahoo.com"
+ ```
 - php artisan serve
+ ```
 
 # Desenvedores do projeto 
 * [Emilly Gabriele](https://github.com/EmyyS2)
