@@ -38,6 +38,8 @@ class ClienteController extends Controller
     public function redefinirpassword(Request $request)
     {
         $Cliente = Clientes::where('email', $request->email)->first();
+        $Cliente = Clientes::where('cpf', $request->cpf)->first();
+
 
         if (!isset($Cliente)) {
             return response()->json([

@@ -142,6 +142,7 @@ class ProfissioanalController extends Controller
     public function redefinirpassword(Request $request)
     {
         $Profissional =  Profissional::where('email', $request->email)->first();
+        $Profissional =  Profissional::where('cpf', $request->cpf)->first();
 
         if (!isset($Profissional)) {
             return response()->json([
